@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 import static org.junit.Assert.assertTrue;
 
 public class TransactionsPagePOM extends AbstractPage {
@@ -235,19 +234,19 @@ public class TransactionsPagePOM extends AbstractPage {
     //Method to click on blank status transaction and change to Accepted
     public void clickOnBlankStatusFieldAndSelectAcceptedStatus(String transactionNumber) throws InterruptedException {
         findElement(By.xpath("//table[2]/tbody/tr[" + whichNumberOfTheRow(transactionNumber) + "]/td[13]/div/div")).click();
-        log.println("Checkbox clicked.");
+        System.out.println("Checkbox clicked.");
         findElement(By.xpath("//table[2]/tbody/tr[" + whichNumberOfTheRow(transactionNumber) + "]/td[13]/div")).click();
-        log.println("ACCEPTED selected.");
+        System.out.println("ACCEPTED selected.");
         assertTrue(findElement(By.xpath("//table[2]/tbody/tr[" + whichNumberOfTheRow(transactionNumber) + "]/td[13]/div/div")).getText().equals("ACCEPTED"));
-        log.println("ACCEPTED checked and it success.");
+        System.out.println("ACCEPTED checked and it success.");
 
         Thread.sleep(2000);
         findElement(fileUploadsBtnInMenu).click();
-        log.println("Navigate to another page.");
+        System.out.println("Navigate to another page.");
         Thread.sleep(2000);
 
         findElement(bookingsBtnInMenu).click();
-        log.println("Navigate back to Booking page.");
+        System.out.println("Navigate back to Booking page.");
         Thread.sleep(2000);
 
         findElement(quickViewDropDown).click();
@@ -259,28 +258,28 @@ public class TransactionsPagePOM extends AbstractPage {
 
         assertTrue(findElement(By.xpath("//table[2]/tbody/tr[" + whichNumberOfTheRow(transactionNumber) + "]/td[13]/div/div")).getText().equals("ACCEPTED"));
         Thread.sleep(2000);
-        log.println("ACCEPTED checked and it success.");
+        System.out.println("ACCEPTED checked and it success.");
     }
 
     //Method to click on blank status transaction and change to Rejected
     public void clickOnBlankStatusFieldAndSelectRejectedStatus(String transactionNumber) throws InterruptedException {
         findElement(By.xpath("//table[2]/tbody/tr[" + whichNumberOfTheRow(transactionNumber) + "]/td[13]/div/div")).click();
-        log.println("Checkbox clicked.");
+        System.out.println("Checkbox clicked.");
         findElement(By.xpath("//table[2]/tbody/tr[" + whichNumberOfTheRow(transactionNumber) + "]/td[13]/div/div[2]/div[3]/ul/li[3]")).click();
 
         findElement(By.xpath("//table[2]/tbody/tr[" + whichNumberOfTheRow(transactionNumber) + "]/td[14]/div/div[2]/div[3]/ul/li[5]")).click();
 
-        log.println("REJECTED selected.");
+        System.out.println("REJECTED selected.");
         assertTrue(findElement(By.xpath("//table[2]/tbody/tr[" + whichNumberOfTheRow(transactionNumber) + "]/td[13]/div/div")).getText().equals("REJECTED"));
-        log.println("REJECTED checked and it success.");
+        System.out.println("REJECTED checked and it success.");
 
         Thread.sleep(2000);
         findElement(fileUploadsBtnInMenu).click();
-        log.println("Navigate to another page.");
+        System.out.println("Navigate to another page.");
         Thread.sleep(2000);
 
         findElement(bookingsBtnInMenu).click();
-        log.println("Navigate back to Booking page.");
+        System.out.println("Navigate back to Booking page.");
         Thread.sleep(2000);
 
         findElement(quickViewDropDown).click();
@@ -292,38 +291,38 @@ public class TransactionsPagePOM extends AbstractPage {
 
         assertTrue(findElement(By.xpath("//table[2]/tbody/tr[" + whichNumberOfTheRow(transactionNumber) + "]/td[13]/div/div")).getText().equals("REJECTED"));
         Thread.sleep(2000);
-        log.println("REJECTED checked and it success.");
+        System.out.println("REJECTED checked and it success.");
     }
 
     //Method to click on blank status transaction and change to Rejected
     public void clickOnBlankStatusFieldAndSelectAmendedStatus(String transactionNumber) throws InterruptedException {
         Thread.sleep(4000);
         findElement(By.xpath("//table[2]/tbody/tr[" + whichNumberOfTheRow(transactionNumber) + "]/td[12]/div/div/input")).sendKeys("200");
-        log.println("Set amount to 200");
+        System.out.println("Set amount to 200");
         Thread.sleep(4000);
         findElement(By.xpath("//table[2]/tbody/tr[" + whichNumberOfTheRow(transactionNumber) + "]/td[13]/div/div")).click();
-        log.println("Checkbox clicked.");
+        System.out.println("Checkbox clicked.");
         Thread.sleep(4000);
 
         findElement(By.xpath("//table[2]/tbody/tr[" + whichNumberOfTheRow(transactionNumber) + "]/td[14]/div/div[2]/div[3]/ul/li[5]")).click();
         //table[2]/tbody/tr[12]/td[12]/div/div[2]/div[3]/ul/li[5]
         //table[2]/tbody/tr/td[14]/div/div[2]/div[3]/ul/li[5]
         Thread.sleep(4000);
-        log.println("AMENDED selected, reason code set.");
+        System.out.println("AMENDED selected, reason code set.");
 
 
 
 
         assertTrue(findElement(By.xpath("//table[2]/tbody/tr[" + whichNumberOfTheRow(transactionNumber) + "]/td[13]/div/div")).getText().equals("AMENDED"));
-        log.println("AMENDED checked and it success.");
+        System.out.println("AMENDED checked and it success.");
 
         Thread.sleep(2000);
         findElement(fileUploadsBtnInMenu).click();
-        log.println("Navigate to another page.");
+        System.out.println("Navigate to another page.");
         Thread.sleep(2000);
 
         findElement(bookingsBtnInMenu).click();
-        log.println("Navigate back to Booking page.");
+        System.out.println("Navigate back to Booking page.");
         Thread.sleep(2000);
 
         findElement(quickViewDropDown).click();
@@ -335,7 +334,7 @@ public class TransactionsPagePOM extends AbstractPage {
 
         assertTrue(findElement(By.xpath("//table[2]/tbody/tr[" + whichNumberOfTheRow(transactionNumber) + "]/td[13]/div/div")).getText().equals("AMENDED"));
         Thread.sleep(2000);
-        log.println("AMENDED checked and it success.");
+        System.out.println("AMENDED checked and it success.");
     }
 
     // Validating Tx Status dropdown elements
